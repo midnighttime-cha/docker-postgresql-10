@@ -1,7 +1,6 @@
-FROM postgres:10.13-alpine
+FROM postgres:10.13
 
-RUN apk update
-RUN apk add nano
+RUN apt update
 
 RUN sed -i -e"s/^#listen_addresses =.*$/listen_addresses = '*'/" /var/lib/postgresql/data/postgresql.conf
 RUN echo "host    all    all    0.0.0.0/0    md5" >> /var/lib/postgresql/data/pg_hba.conf

@@ -1,12 +1,12 @@
 # Docker
 
 ## Docker build
-```docker
+```bash
 docker build --name [DOCKER_IMAGE_NAME] .
 ```
 
 ## Docker run
-```docker
+```bash
 docker run -d \
 --name postgres-server \
 -e POSTGRES_PASSWORD=[MY_PASSWORD] \

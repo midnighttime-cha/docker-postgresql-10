@@ -1,7 +1,10 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install virtualenv python-pip libpq-dev python-dev
+RUN apt-get install -y --no-install-recommends \
+  virtualenv \
+  python-pip \
+  libpq-dev python-dev
 
 RUN wget https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v1.4/pip/pgadmin4-1.4-py2.py3-none-any.whl
 RUN pip install pgadmin4-1.4-py2.py3-none-any.whl

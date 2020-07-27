@@ -14,9 +14,12 @@ docker build -t docker.pkg.github.com/midnighttime-cha/docker-postgresql-10/post
 ```bash
 docker run -d \
 --name postgresql-server \
+--restart=always \
 -p 5432:5432 \
--v postgresql:/etc/postgresql \
--v logs:/var/log/postgresql \
--v lib:/var/lib/postgresql \
+-e POSTGRES_USER=posgres \
+-e POSTGRES_PASSWORD=[PASSWORD] \
+-e POSTGRES_DB=postgres \
+-e PGDATA=/var/lib/postgresql/data/pgdata \
+-v data:/var/lib/postgresql/data \
 docker.pkg.github.com/midnighttime-cha/docker-postgresql-10/postgres-server
 ```

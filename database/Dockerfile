@@ -10,7 +10,7 @@ RUN apt-get install -y --no-install-recommends postgresql-10
 USER postgres
 
 RUN    /etc/init.d/postgresql start && \
-  psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'P0$+g&e$q|P&e0+!e&';" &&\
+  psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
   createdb -O docker docker
 
 RUN echo "host    all   all   0.0.0.0/0   md5" >> /etc/postgresql/10/main/pg_hba.conf

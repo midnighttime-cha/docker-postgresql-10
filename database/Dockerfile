@@ -9,7 +9,7 @@ RUN apt-get install -y --no-install-recommends postgresql-10
 
 USER postgres
 
-RUN    /etc/init.d/postgresql start &&\
+RUN    /etc/init.d/postgresql start && \
   psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
   createdb -O docker docker
 

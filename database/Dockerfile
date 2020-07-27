@@ -7,7 +7,7 @@ RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-k
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends postgresql-10
 
-USER postgres
+#USER postgres
 
 RUN    /etc/init.d/postgresql start &&\
   psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
